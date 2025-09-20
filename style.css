@@ -1,0 +1,203 @@
+:root {
+    --primary-color: #f7f1e3; /* Light Cream */
+    --secondary-color: #c09a87; /* Dusty Rose */
+    --dark-text: #333;
+    --light-text: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-color: #a47b6a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--dark-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Big Flex on Page Load */
+.hero {
+    
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/img1.jpeg') no-repeat center center/cover;
+    color: var(--light-text);
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px var(--secondary-color); }
+    to { text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color); }
+}
+
+/* Scroll effect - "Feel the candle light" */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(255, 255, 200, 0.1) 0%, rgba(255, 255, 200, 0) 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: flicker 4s ease-in-out infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* Main Content */
+.container {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.candle-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.candle-row-collec {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.candle-card {
+    background-color: var(--light-text);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 250px;
+}
+
+.candle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.candle-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.candle-card:hover img {
+    transform: scale(1.05);
+}
+
+.candle-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 1rem 0 0.5rem;
+}
+
+.candle-card p.price {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.buy-btn {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.buy-btn:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+.candle-card-g {
+    background-color: var(--light-text);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 500px;
+}
+.cus{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .candle-row-collec{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+     .candle-row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .candle-card {
+        width: 90%;
+        max-width: 350px;
+    }
+}
