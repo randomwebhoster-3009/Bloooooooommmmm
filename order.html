@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .order-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .order-page h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .order-page p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366; /* WhatsApp green */
+            color: var(--light-text);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="order-page">
+        <img src="./images/logo.jpeg" height=450px width="450px">
+        <h1>Contact Us to Order</h1>
+        <p>To place an order, please contact us directly on WhatsApp. Our team will be happy to assist you with your selection and payment details.</p>
+        
+        <a href="https://wa.me/+919890582597?text=Hi!%20I'd%20like%20to%20place%20an%20order%20for%20a%20candle." class="whatsapp-btn" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Chat on WhatsApp
+        </a>
+
+        <a href="index.html" style="margin-top: 2rem; color: var(--secondary-color); text-decoration: none; font-weight: bold;">← Back to Home</a>
+    </div>
+
+</body>
+</html>
